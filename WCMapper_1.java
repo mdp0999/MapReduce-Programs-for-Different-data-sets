@@ -13,15 +13,15 @@ public void map(LongWritable key, Text value, Context context) throws IOExceptio
 {
 	String line =  value.toString();
 	StringTokenizer tokenizer = new StringTokenizer(line);
-	while(tokenizer.hasMoreTokens())
-	{
-		String word = tokenizer.nextToken();
-		word = tokenizer.nextToken();
+	
+	
+	String word = tokenizer.nextToken();
+	word = tokenizer.nextToken();
 	
 	
 		
 	context.write(new Text(word), new IntWritable(1));
-	}
+	
 
 	
 }
