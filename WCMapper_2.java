@@ -12,16 +12,12 @@ public class WCMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 public void map(LongWritable key, Text value, Context context) throws IOException , InterruptedException
 {
 	String line =  value.toString();
-	StringTokenizer tokenizer = new StringTokenizer(line);
-	while(tokenizer.hasMoreTokens())
-	{
-		String word = tokenizer.nextToken();
-		word = tokenizer.nextToken();
 	
 	
+	String word = line.substring(22, 27);
 		
 	context.write(new Text(word), new IntWritable(1));
-	}
+
 
 	
 }
